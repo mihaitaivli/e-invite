@@ -9,6 +9,9 @@
   "private": null,
   "scripts": {
     "start-prisma": "docker-compose up -d",
-    "stop-prisma": "docker-compose stop"
+    "stop-prisma": "docker-compose stop",
+    "deploy": "npm run start-prisma && prisma deploy",
+    "generate": "prisma generate",
+    "update-prisma": "npm run deploy && npm run generate"
   }
 }
