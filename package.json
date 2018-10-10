@@ -8,6 +8,7 @@
   "license": "MIT",
   "private": null,
   "scripts": {
-    "start-prisma": "docker-compose up -d"
+    "start-prisma": "docker-compose up -d",
+    "stop-prisma": "docker-compose stop"
   }
 }
