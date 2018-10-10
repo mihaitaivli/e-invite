@@ -1,0 +1,10 @@
+{
+  "name": "e-invite",
+  "version": "0.0.1",
+  "description": "Manage your invitations and rsvp's online",
+  "main": "index.js",
+  "repository": "https://github.com/mihaitaivli/e-invite.git",
+  "author": "Mihaita Ivli <mihaitaivli@gmail.com>",
+  "license": "MIT",
+  "private": null
+}
