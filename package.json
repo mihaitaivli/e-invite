@@ -6,5 +6,8 @@
   "repository": "https://github.com/mihaitaivli/e-invite.git",
   "author": "Mihaita Ivli <mihaitaivli@gmail.com>",
   "license": "MIT",
-  "private": null
+  "private": null,
+  "scripts": {
+    "start-prisma": "docker-compose up -d"
+  }
 }
