@@ -6,12 +6,24 @@
   "repository": "https://github.com/mihaitaivli/e-invite.git",
   "author": "Mihaita Ivli <mihaitaivli@gmail.com>",
   "license": "MIT",
-  "private": null,
+  "private": true,
   "scripts": {
-    "start-prisma": "docker-compose up -d",
+    "check-env-vars": "ts-node --require dotenv/config utils/checkEnvVars.ts dotenv_config_path=./.env",
+    "start-prisma": "npm run check-env-vars && docker-compose up -d",
     "stop-prisma": "docker-compose stop",
+    "update-prisma": "npm run deploy && npm run generate",
     "deploy": "npm run start-prisma && prisma deploy",
     "generate": "prisma generate",
-    "update-prisma": "npm run deploy && npm run generate"
+    "dev-ts": "nodemon -r ts-node/register server/ts-server",
+    "dev-go": "go run server/go-server/src/main.go",
+    "build-go": "go build -o server/go-server/build/main.sh server/go-server/src/main.go",
+    "start-ts": "ts-node server/ts-server",
+    "start-go": "npm run build-go && ./server/go-server/build/main.sh"
+  },
+  "dependencies": {
+    "dotenv": "^6.1.0",
+    "prisma": "^1.18.1",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.1.3"
   }
 }

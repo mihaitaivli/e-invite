@@ -21,7 +21,7 @@ type ID struct{}
 // User exists docs
 func (exists *Exists) User(params *UserWhereUniqueInput) bool {
 	client := Client{
-		Endpoint: (map[bool]string{true: exists.Endpoint, false: "`http://localhost:4466`"})[exists.Endpoint != ""],
+		Endpoint: (map[bool]string{true: exists.Endpoint, false: "`${process.env[PRISMA_API]}`"})[exists.Endpoint != ""],
 		Debug:    exists.Debug,
 	}
 	data, err := client.User(
@@ -170,7 +170,7 @@ func (client Client) Users(params *UsersParams) *UserExecArray {
 // UsersConnection exists docs
 func (exists *Exists) UsersConnection(params *UserWhereInput) bool {
 	client := Client{
-		Endpoint: (map[bool]string{true: exists.Endpoint, false: "`http://localhost:4466`"})[exists.Endpoint != ""],
+		Endpoint: (map[bool]string{true: exists.Endpoint, false: "`${process.env[PRISMA_API]}`"})[exists.Endpoint != ""],
 		Debug:    exists.Debug,
 	}
 	data, err := client.UsersConnection(
@@ -2148,7 +2148,7 @@ func (client Client) GraphQL(query string, variables map[string]interface{}) (ma
 
 	req := graphql.NewRequest(query)
 	gqlClient := graphql.NewClient(
-		(map[bool]string{true: client.Endpoint, false: "`http://localhost:4466`"})[client.Endpoint != ""],
+		(map[bool]string{true: client.Endpoint, false: "`${process.env[PRISMA_API]}`"})[client.Endpoint != ""],
 	)
 
 	for key, value := range variables {

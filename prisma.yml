@@ -1,10 +1,11 @@
-endpoint: http://localhost:4466
+endpoint: ${env:PRISMA_API}
 datamodel:
   - schema/userType.graphql
 generate:
   - generator: typescript-client
-    output: ./prisma-client/ts/
+    output: ./generated/prisma-client/ts/
   - generator: go-client
-    output: ./prisma-client/go/
+    output: ./generated/prisma-client/go/
   - generator: graphql-schema
-    output: ./graphql-schema/
+    output: ./generated/graphql-schema/
+secret: ${env:PRISMA_SECRET}
