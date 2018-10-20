@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "esnext",
+    "preserveConstEnums": true,
+    "sourceMap": true,
+    "lib": [
+      "esnext",
+      "esnext.asynciterable"
+    ]
+  }
+}

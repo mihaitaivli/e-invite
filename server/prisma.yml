@@ -3,7 +3,9 @@ datamodel:
   - schema/userType.graphql
 generate:
   - generator: typescript-client
-    output: ./generated/prisma-client/ts/
+    output: ./generated/prisma-client/
   - generator: graphql-schema
     output: ./generated/graphql-schema/
 secret: ${env:PRISMA_SECRET}
+seed:
+  run: yarn ts-node ./seed.ts
