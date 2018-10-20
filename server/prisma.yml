@@ -4,8 +4,6 @@ datamodel:
 generate:
   - generator: typescript-client
     output: ./generated/prisma-client/ts/
-  - generator: go-client
-    output: ./generated/prisma-client/go/
   - generator: graphql-schema
     output: ./generated/graphql-schema/
 secret: ${env:PRISMA_SECRET}
