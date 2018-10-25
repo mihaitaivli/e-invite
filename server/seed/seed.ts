@@ -1,4 +1,4 @@
- import { Prisma, UserNode, EventNode } from './generated/prisma-client/'
+ import { Prisma, UserNode, EventNode } from '../generated/prisma-client/'
 
  const db = new Prisma({
    endpoint: process.env.PRISMA_API,

@@ -1,0 +1,3 @@
+projects:
+  e-invite:
+    include: ["schema/*.graphql"]

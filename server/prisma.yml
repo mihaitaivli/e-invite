@@ -1,13 +1,11 @@
 endpoint: ${env:PRISMA_API}
 datamodel:
-  - schema/userType.graphql
+  - schema/schema.graphql
 generate:
   - generator: typescript-client
-    output: generated/ts/prisma-client/
-  - generator: go-client
-    output: generated/go/prisma-client
+    output: generated/prisma-client/
   - generator: graphql-schema
     output: generated/schema/
 secret: ${env:PRISMA_SECRET}
 seed:
-  run: yarn ts-node ./seed.ts
+  run: yarn ts-node seed/seed.ts
