@@ -80,7 +80,6 @@ fabric.properties
 
 # Linux trash folder which might appear on any partition or disk
 .Trash-*
-
 # .nfs files are created when an open file is removed but is still being accessed
 .nfs*
 
@@ -88,3 +87,6 @@ fabric.properties
 .env
 # node_modules
 node_modules/
+*/node_modules/
+# generated prisma client
+**/generated/

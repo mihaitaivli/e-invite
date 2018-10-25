@@ -1,7 +1,9 @@
 {
+  "extends": "tslint:recommended",
   "compilerOptions": {
     "module": "commonjs",
     "target": "esnext",
+    "noUnusedLocals": true,
     "preserveConstEnums": true,
     "sourceMap": true,
     "lib": [
