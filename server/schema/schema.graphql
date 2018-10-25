@@ -1,10 +1,25 @@
-type User {
-  id: ID! @unique
+interface Person {
   name: String!
+  contact_number: String!
+  dietary_restrictions: String
+  special_requirements: String
+  allergies: [String!]!
+}
+
+type User implements Person {
+  id: ID! @unique
   email: String!
+  password: String!
+  name: String!
+  guardian_name: String!
+  contact_number: String!
+  dietary_restrictions: String
+  special_requirements: String
+  allergies: [String!]!
 }
 
 type Event {
   id: ID! @unique
+  organized_by: [User!]!
   atendees: [String!]!
 }
