@@ -1,0 +1,12 @@
+{
+  "name": "serverless-middleware",
+  "version": "0.0.1",
+  "description": "Serverless base used as middleware/resolvers for the backend",
+  "main": "index.js",
+  "author": "Mihaita Ivli",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "serverless": "^1.32.0"
+  }
+}
